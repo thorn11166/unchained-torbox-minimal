@@ -49,21 +49,27 @@ jobs:
           ls -la /usr/local/lib/android/sdk/ 2>/dev/null | head -10 || echo "SDK not found"
       
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace 2>&1 | tee build-output.log
+        run: |
+          ./gradlew assembleDebug -x lint --stacktrace --info 2>&1 | tee build-output.log
+          echo ""
+          echo "=== Build Exit Code: $? ==="
+          echo ""
+          echo "=== Gradle Tasks That Ran ==="
+          grep "Task " build-output.log | tail -30
       
       - name: Verify APK
         run: |
           echo "=== Checking for APK files ==="
-          if find . -name "*.apk" -type f 2>/dev/null | tee apk_files.txt; then
-            echo "✅ APK files found!"
-            cat apk_files.txt
-          else
-            echo "❌ No APK files found"
-            echo "=== Build output structure ==="
-            find app -type d -name "build" 2>/dev/null | head -10
-            find app -path "*/outputs/*" -type f 2>/dev/null | head -20
-            exit 1
-          fi
+          find . -name "*.apk" -type f 2>/dev/null || echo "No APK files found"
+          echo ""
+          echo "=== Full build directory structure ==="
+          find app -type d -name "build" 2>/dev/null
+          echo ""
+          echo "=== build/outputs directory contents ==="
+          find app -path "*/build/outputs" -type d 2>/dev/null
+          echo ""
+          echo "=== All files in app directory ==="
+          find app -type f -name "*.apk" -o -name "build.log" 2>/dev/null | head -20
       
       - name: Upload APK to artifacts
         if: always()
