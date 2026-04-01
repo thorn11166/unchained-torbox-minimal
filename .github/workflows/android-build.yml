@@ -25,6 +25,11 @@ jobs:
           api-level: 36
           build-tools: 36.0.0
       
+      - name: Create local.properties
+        run: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+          cat local.properties
+      
       - name: Make gradlew executable
         run: chmod +x gradlew
       
