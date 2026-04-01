@@ -1,4 +1,4 @@
-package com.thorn11166.uncharinedtorbox.ui
+package com.thorn11166.unchainedtorbox.ui
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -9,8 +9,8 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.thorn11166.uncharinedtorbox.R
-import com.thorn11166.uncharinedtorbox.data.api.ApiClient
+import com.thorn11166.unchainedtorbox.R
+import com.thorn11166.unchainedtorbox.data.api.ApiClient
 import kotlinx.coroutines.launch
 
 /**

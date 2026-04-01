@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.thorn11166.uncharinedtorbox"
+    namespace = "com.thorn11166.unchainedtorbox"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.thorn11166.uncharinedtorbox"
+        applicationId = "com.thorn11166.unchainedtorbox"
         minSdk = 27
         targetSdk = 36
         versionCode = 1

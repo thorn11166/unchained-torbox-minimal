@@ -1,4 +1,4 @@
-package com.thorn11166.uncharinedtorbox.data.api
+package com.thorn11166.unchainedtorbox.data.api
 
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient

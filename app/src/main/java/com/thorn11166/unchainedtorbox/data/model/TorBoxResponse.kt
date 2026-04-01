@@ -1,4 +1,4 @@
-package com.thorn11166.uncharinedtorbox.data.model
+package com.thorn11166.unchainedtorbox.data.model
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

@@ -1,4 +1,4 @@
-package com.thorn11166.uncharinedtorbox
+package com.thorn11166.unchainedtorbox
 
 import android.app.Application
 
