@@ -20,15 +20,17 @@ jobs:
           cache: 'gradle'
       
       - name: Setup Android SDK
+        id: setup-android
         uses: android-actions/setup-android@v3
         with:
           api-level: 36
           build-tools: 36.0.0
       
-      - name: Create local.properties
+      - name: Debug Environment
         run: |
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
-          cat local.properties
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          ls -la $ANDROID_SDK_ROOT/platforms/ 2>/dev/null | head -5 || echo "Platforms dir not found"
       
       - name: Make gradlew executable
         run: chmod +x gradlew
