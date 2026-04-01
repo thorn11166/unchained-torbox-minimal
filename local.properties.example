@@ -1,0 +1,4 @@
+# This file is intentionally excluded from version control.
+# Copy this to local.properties and update with your SDK path
+
+sdk.dir=/path/to/Android/SDK
