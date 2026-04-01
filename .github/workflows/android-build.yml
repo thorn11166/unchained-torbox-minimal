@@ -53,7 +53,7 @@ jobs:
       
       - name: Build Debug APK
         run: |
-          ./gradlew build \
+          ./gradlew app:assembleDebug \
             -x lint \
             -x test \
             --no-daemon \
