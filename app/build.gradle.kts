@@ -33,8 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    // Disable unused build features to avoid dependency issues
     buildFeatures {
-        viewBinding = true
+        viewBinding = false
+        dataBinding = false
     }
 }
 
